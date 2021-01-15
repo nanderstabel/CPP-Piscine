@@ -6,14 +6,13 @@
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 09:20:37 by nstabel       #+#    #+#                 */
-/*   Updated: 2021/01/15 16:58:48 by nstabel       ########   odam.nl         */
+/*   Updated: 2021/01/15 17:59:25 by nstabel       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook(void) {
-	std::cout << "Constructor called" << std::endl;
+Phonebook::Phonebook(void) : _nbContacts(0) {
 	return;
 }
 
