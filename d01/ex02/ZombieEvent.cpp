@@ -5,14 +5,14 @@
 /*                                                     +:+                    */
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/15 22:34:28 by nstabel       #+#    #+#                 */
-/*   Updated: 2021/01/15 23:47:31 by nstabel       ########   odam.nl         */
+/*   Created: 2021/01/16 00:15:28 by nstabel       #+#    #+#                 */
+/*   Updated: 2021/01/16 15:34:10 by nstabel       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
-ZombieEvent::ZombieEvent(void) {
+ZombieEvent::ZombieEvent(int N) {
 	std::cout << "Constructing ZombieEvent" << std::endl;
 	return;
 }
