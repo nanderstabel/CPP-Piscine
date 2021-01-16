@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   HumanA.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/15 21:42:02 by nstabel       #+#    #+#                 */
-/*   Updated: 2021/01/16 16:27:41 by nstabel       ########   odam.nl         */
+/*   Created: 2021/01/16 17:49:06 by nstabel       #+#    #+#                 */
+/*   Updated: 2021/01/16 18:29:25 by nstabel       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include "HumanA.hpp"
 
-int		main(void)
-{
-	ZombieHorde	horde(5);
+HumanA::HumanA(std::string name, Weapon &weapon) : 
+	_name(name),
+	_weapon(weapon) {
+	std::cout << "Constructing HumanA" << std::endl;
+	return;
+}
 
-	horde.announce();
-	return 0;
+HumanA::~HumanA(void) {
+	std::cout << "Destructing HumanA" << std::endl;
+	return;
+}
+
+void		HumanA::attack(void) const {
+	std::cout << _name << " attacks with his ";
+	std::cout << _weapon.getType() << std::endl;
 }

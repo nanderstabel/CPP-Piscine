@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   Weapon.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/15 21:42:02 by nstabel       #+#    #+#                 */
-/*   Updated: 2021/01/16 16:27:41 by nstabel       ########   odam.nl         */
+/*   Created: 2021/01/16 17:48:40 by nstabel       #+#    #+#                 */
+/*   Updated: 2021/01/16 18:24:38 by nstabel       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include "Weapon.hpp"
 
-int		main(void)
-{
-	ZombieHorde	horde(5);
+Weapon::Weapon(std::string type) : _type(type) {
+	std::cout << "Constructing Weapon" << std::endl;
+	return;
+}
 
-	horde.announce();
-	return 0;
+Weapon::~Weapon(void) {
+	std::cout << "Destructing Weapon" << std::endl;
+	return;
+}
+
+const std::string		Weapon::getType(void) const {
+	return _type;
+}
+
+void					Weapon::setType(std::string type) {
+	_type = type;
 }

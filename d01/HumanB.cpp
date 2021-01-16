@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   HumanB.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/15 21:42:02 by nstabel       #+#    #+#                 */
-/*   Updated: 2021/01/16 16:27:41 by nstabel       ########   odam.nl         */
+/*   Created: 2021/01/16 17:49:20 by nstabel       #+#    #+#                 */
+/*   Updated: 2021/01/16 18:38:11 by nstabel       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#include "HumanB.hpp"
 
-int		main(void)
-{
-	ZombieHorde	horde(5);
+HumanB::HumanB(std::string name) : _name(name) {
+	std::cout << "Constructing HumanB" << std::endl;
+	return;
+}
 
-	horde.announce();
-	return 0;
+HumanB::~HumanB(void) {
+	std::cout << "Destructing HumanB" << std::endl;
+	return;
+}
+
+void		HumanB::setWeapon(Weapon &weapon) {
+	_weapon = &weapon;
+}
+
+void		HumanB::attack(void) const {
+	std::cout << _name << " attacks with his ";
+	std::cout << _weapon->getType() << std::endl;
 }

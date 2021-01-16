@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   HumanB.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: nstabel <nstabel@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/15 21:42:02 by nstabel       #+#    #+#                 */
-/*   Updated: 2021/01/16 16:27:41 by nstabel       ########   odam.nl         */
+/*   Created: 2021/01/16 17:46:54 by nstabel       #+#    #+#                 */
+/*   Updated: 2021/01/16 18:37:57 by nstabel       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Zombie.hpp"
-#include "ZombieHorde.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int		main(void)
-{
-	ZombieHorde	horde(5);
+# include <iostream>
+# include "Weapon.hpp"
 
-	horde.announce();
-	return 0;
-}
+class HumanB {
+
+public:
+
+	HumanB(std::string name);
+	~HumanB(void);
+
+	void	setWeapon(Weapon &weapon);
+	void	attack(void) const;
+
+private:
+
+	const std::string	_name;
+	Weapon				*_weapon;
+
+};
+
+#endif
